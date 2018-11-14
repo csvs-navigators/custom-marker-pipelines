@@ -4,12 +4,13 @@ pipeline {
     buildDiscarder(logRotator(numToKeepStr: '2'))
   }
   stages {
-stage('Test') {
+ stage('Build and Push Image') {
+      when {
+         beforeAgent true
+         branch 'master'
+      }
       steps {
-        container('nodejs') {
-          echo 'Hello World!'   
-          sh 'node --version'
-        }
+         echo "TODO - build and push image"
       }
     }
   }
