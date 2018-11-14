@@ -18,6 +18,10 @@ agent {
           yaml testPodYaml
         }
       }
+         steps {
+         echo "TODO - build and push image"
+         sh 'node --version'
+      }
     }
   stage('Build and Push Image') {
   agent any
